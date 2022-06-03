@@ -8,7 +8,13 @@ const dates = [
 ];
 
 // TODO: Buatlah fungsi createDate
-const createDate = null;
+const createDate = (dates, index = null) =>
+  index === null
+    ? dates
+        .map((x) => Math.floor(new Date(x).getTime() / 1000))
+        .sort()
+        .join("-")
+    : Math.floor(new Date(dates[index]).getTime() / 1000).toString();
 
 // ! JANGAN DIMODIFIKASI
 (() => {
